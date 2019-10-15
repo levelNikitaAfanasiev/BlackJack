@@ -1,0 +1,11 @@
+/home/dev/Desktop/blackjack/bin/Debug/netcoreapp3.0/blackjack
+/home/dev/Desktop/blackjack/bin/Debug/netcoreapp3.0/blackjack.deps.json
+/home/dev/Desktop/blackjack/bin/Debug/netcoreapp3.0/blackjack.runtimeconfig.json
+/home/dev/Desktop/blackjack/bin/Debug/netcoreapp3.0/blackjack.runtimeconfig.dev.json
+/home/dev/Desktop/blackjack/bin/Debug/netcoreapp3.0/blackjack.dll
+/home/dev/Desktop/blackjack/bin/Debug/netcoreapp3.0/blackjack.pdb
+/home/dev/Desktop/blackjack/obj/Debug/netcoreapp3.0/blackjack.csprojAssemblyReference.cache
+/home/dev/Desktop/blackjack/obj/Debug/netcoreapp3.0/blackjack.AssemblyInfoInputs.cache
+/home/dev/Desktop/blackjack/obj/Debug/netcoreapp3.0/blackjack.AssemblyInfo.cs
+/home/dev/Desktop/blackjack/obj/Debug/netcoreapp3.0/blackjack.dll
+/home/dev/Desktop/blackjack/obj/Debug/netcoreapp3.0/blackjack.pdb
