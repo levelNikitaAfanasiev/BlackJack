@@ -7,7 +7,7 @@ namespace blackjack
 {
     
    class Cards{
-       public static Card card = new Card("","", 0);
+       public static Card card = new Card("","",0);
        List<string> Lear = new List<string>(){
            "CH",
            "CR",

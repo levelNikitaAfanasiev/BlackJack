@@ -15,14 +15,13 @@ namespace blackjack
       ConsoleKeyInfo check;
       do{
       count+=Cards.Turn();
-      Console.WriteLine("Card {0} {1}", Cards.card.Name, Cards.card.Lear);   
-      Console.WriteLine("Value {0}", count);   
+      Write.WriteLine($"Card {Cards.card.Name} {Cards.card.Lear}");   
+      Console.WriteLine($"Value {count}");   
       if(count > 21)
       {
       return true; 
       }
-      Console.WriteLine("Press eny button to take a card");
-      Console.WriteLine("Press ESC to take end");
+      Write.WriteToContinue("take a card");
       check = Console.ReadKey();
             
       }while(check.Key != ConsoleKey.Escape);

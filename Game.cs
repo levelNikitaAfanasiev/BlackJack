@@ -17,28 +17,28 @@ namespace blackjack
             croupier = new Сroupier();
             
             if(player.Play()){
-                Console.WriteLine("Winner Croupier");
+                Write.WriteLine("Winner Croupier");
                 lose++;
                 return;
             }
             if(croupier.Play()){
-                Console.WriteLine("Winner Player");
+                Write.WriteLine("Winner Player");
                 wins++;
                 return;
             }
             if(player.count > croupier.count )
             {
-                Console.WriteLine("Winner Player");
+                Write.WriteLine("Winner Player");
                 wins++;
             }
             else if(player.count < croupier.count)
             {
-                Console.WriteLine("Winner Croupier");
+                Write.WriteLine("Winner Croupier");
                 lose++;
             }
             else
             {
-                Console.WriteLine("No Winner");
+                Write.WriteLine("No Winner");
              
             }
         }
@@ -49,10 +49,9 @@ namespace blackjack
           do{
             
           StartGame();
-          Console.WriteLine("wins {0}", wins);
-          Console.WriteLine("Loses {0}", lose);
-          Console.WriteLine("Press eny button to play again");
-          Console.WriteLine("Press ESC to take end this game");
+          Write.WriteLine($"wins {wins}");
+          Write.WriteLine($"Loses {lose}");
+          Write.WriteToContinue("play again");
           check = Console.ReadKey();
           Console.Clear();
           }while(check.Key != ConsoleKey.Escape);
