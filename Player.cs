@@ -6,16 +6,17 @@ namespace blackjack
        
     public int count;
   public Player(){
-
+    
     count+=Cards.Turn();
-                         
+    Console.WriteLine("Card {0} {1}", Cards.card.Name, Cards.card.Lear);
     }
     public bool Play()
      {
       ConsoleKeyInfo check;
       do{
       count+=Cards.Turn();
-      Console.WriteLine("Your Cards {0}", count);     
+      Console.WriteLine("Card {0} {1}", Cards.card.Name, Cards.card.Lear);   
+      Console.WriteLine("Value {0}", count);   
       if(count > 21)
       {
       return true; 

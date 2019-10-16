@@ -7,9 +7,15 @@ namespace blackjack
 {
     
    class Cards{
-        public static Dictionary<string,int> cards = new Dictionary<string,int>()
-        {
-            {"2",2},
+       public static Card card = new Card("","", 0);
+       List<string> Lear = new List<string>(){
+           "CH",
+           "CR",
+           "PE",
+           "BU"
+       };
+       Dictionary<string,int> Name = new Dictionary<string,int>(){
+          {"2",2},
             {"3",3},
             {"4",4},
             {"5",5},
@@ -22,23 +28,35 @@ namespace blackjack
             {"Q",10},
             {"K",10},
             {"T",11}
-        };
-        public static List<KeyValuePair<string,int>> deck = new List<KeyValuePair<string,int>>();
+       };
+        public static List<Card> deck = new List<Card>();
         Random rand = new Random();
-        public Cards(){
-            for(int i = 0; i < 4; i++){
-                foreach(var v in cards)
-                {
-                    deck.Add(v);
+        public Cards(){            
+              foreach (var item in Name)
+              { 
+               foreach (var b in Lear)
+                {      
+                  deck.Add(new Card(item.Key,b,item.Value));
                 }
-            }
-            deck = deck.OrderBy(v => rand.Next()).ToList();         
-        }   
+              }                      
+        }  
+        
+        public void Shuffer()
+        {    
+          deck  = deck.OrderBy(v => rand.Next()).ToList();  
+        }
       public static int Turn()
       {
-        int card = deck.LastOrDefault().Value;
-        deck.RemoveAt(deck.Count - 1);
-        return card;
+          
+        int cardValue = 0;
+        var list = deck.LastOrDefault();
+      
+        card.Name = list.Name;
+        card.Lear = list.Lear;
+        cardValue = list.Value;
+        deck.RemoveAt(deck.Count-1);
+        
+        return cardValue;
       }
     } 
 }
