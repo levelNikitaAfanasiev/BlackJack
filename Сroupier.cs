@@ -3,7 +3,7 @@
 namespace blackjack
 {
    class Сroupier{
-        public byte count;
+        public int count;
         public Сroupier(){
             count+=Cards.Turn();
         }
