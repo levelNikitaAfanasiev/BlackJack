@@ -12,11 +12,11 @@ namespace blackjack
               count+=Cards.Turn();
                if(count > 21)
             {
-                Write.Count(count, "Croupier");
+                Write.CountCroupier(count);
                 return true; 
             }
             }while(count <= 17);
-            Write.Count(count, "Croupier");
+            Write.CountCroupier(count);
             return false;
         }
     }

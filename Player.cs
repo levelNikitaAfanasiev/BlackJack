@@ -16,7 +16,7 @@ namespace blackjack
       do{
       count+=Cards.Turn();
       Write.PlayerTurn(); 
-      Write.Count(count, "Player");   
+      Write.CountPlayer(count);   
       if(count > 21)
       {
       return true; 

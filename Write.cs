@@ -46,9 +46,13 @@ namespace blackjack
       {
          Console.WriteLine("Card {0} {1}", Cards.card.Name, Cards.card.Lear);
       }
-      public static void Count(int count, string mess)
+      public static void CountPlayer(int count)
       {
-        Console.WriteLine($"{mess} value {count}");
+        Console.WriteLine($"Player value {count}");
+      }
+        public static void CountCroupier(int count)
+      {
+        Console.WriteLine($"Croupier value {count}");
       }
      
        
