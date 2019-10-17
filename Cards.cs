@@ -7,7 +7,7 @@ namespace blackjack
 {
     
    class Cards{
-       public static Card card = new Card("","",0);
+       public static Card card;
        List<string> Lear = new List<string>(){
            "CH",
            "CR",
@@ -50,10 +50,8 @@ namespace blackjack
           
         int cardValue = 0;
         var list = deck.LastOrDefault();
-      
-        card.Name = list.Name;
-        card.Lear = list.Lear;
-        cardValue = list.Value;
+        card = new Card(list.Name,list.Lear,list.Value);
+        cardValue = card.Value;
         deck.RemoveAt(deck.Count-1);
         
         return cardValue;

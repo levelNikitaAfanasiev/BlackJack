@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+
 
 namespace blackjack
 {
@@ -44,17 +46,23 @@ namespace blackjack
         }
         public void Gaming()
         {
-        ConsoleKeyInfo check;
-          
+          ConsoleKeyInfo check;
+          string Path = "/home/dev/Desktop/blackjack/Games";
+          using(FileStream file = new FileStream(Path,FileMode.Open))
+          {
+
           do{
-            
-          StartGame();
-          Write.WriteLine($"wins {wins}");
-          Write.WriteLine($"Loses {lose}");
-          Write.WriteToContinue("play again");
-          check = Console.ReadKey();
-          Console.Clear();
-          }while(check.Key != ConsoleKey.Escape);
+               
+               StartGame();
+              
+                Console.WriteLine($"wins {wins}");
+                Console.WriteLine($"Loses {lose}");
+                Write.WriteToContinue("play again");
+                check = Console.ReadKey();
+                Console.Clear();
+            }while(check.Key != ConsoleKey.Escape);
+                 Write.WriteInFile(file,wins,lose);
+          }
         }
 
     }

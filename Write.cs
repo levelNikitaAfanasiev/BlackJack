@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 
 namespace blackjack
 {
@@ -13,6 +13,15 @@ namespace blackjack
         Write.WriteLine($"Press eny button to {mess}");
         Write.WriteLine("Press ESC to end");
       }
+      public static void WriteInFile(FileStream file, int wins, int loses)
+      { 
+        
+          byte[] array1 = System.Text.Encoding.Default.GetBytes($"wins {wins} ");
+          byte[] array2 = System.Text.Encoding.Default.GetBytes($"Loses {loses} ");
+          file.WriteAsync(array1);
+          file.WriteAsync(array2);
+      }
+     
        
     }
 }
