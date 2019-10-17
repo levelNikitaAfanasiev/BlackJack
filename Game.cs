@@ -19,28 +19,28 @@ namespace blackjack
             croupier = new Сroupier();
             
             if(player.Play()){
-                Write.WriteLine("Winner Croupier");
+                Write.WinCroupier();
                 lose++;
                 return;
             }
             if(croupier.Play()){
-                Write.WriteLine("Winner Player");
+                Write.WinPlayer();
                 wins++;
                 return;
             }
             if(player.count > croupier.count )
             {
-                Write.WriteLine("Winner Player");
+                Write.WinPlayer();
                 wins++;
             }
             else if(player.count < croupier.count)
             {
-                Write.WriteLine("Winner Croupier");
+                Write.WinCroupier();
                 lose++;
             }
             else
             {
-                Write.WriteLine("No Winner");
+                Write.NoWinner();
              
             }
         }
@@ -48,21 +48,16 @@ namespace blackjack
         {
           ConsoleKeyInfo check;
           string Path = "/home/dev/Desktop/blackjack/Games";
-          using(FileStream file = new FileStream(Path,FileMode.Open))
-          {
-
           do{
-               
-               StartGame();
-              
-                Console.WriteLine($"wins {wins}");
-                Console.WriteLine($"Loses {lose}");
-                Write.WriteToContinue("play again");
-                check = Console.ReadKey();
-                Console.Clear();
+                using(FileStream file = new FileStream(Path,FileMode.Open))
+                {
+                    StartGame();               
+                    check = Write.WinsAndLoses(lose, wins);
+                    Write.WriteInFile(file,wins,lose);
+                 }
             }while(check.Key != ConsoleKey.Escape);
-                 Write.WriteInFile(file,wins,lose);
-          }
+                
+          
         }
 
     }

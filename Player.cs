@@ -8,15 +8,15 @@ namespace blackjack
   public Player(){
     
     count+=Cards.Turn();
-    Console.WriteLine("Card {0} {1}", Cards.card.Name, Cards.card.Lear);
+    Write.PlayerTurn();
     }
     public bool Play()
      {
       ConsoleKeyInfo check;
       do{
       count+=Cards.Turn();
-      Write.WriteLine($"Card {Cards.card.Name} {Cards.card.Lear}");   
-      Console.WriteLine($"Value {count}");   
+      Write.PlayerTurn(); 
+      Write.Count(count, "Player");   
       if(count > 21)
       {
       return true; 
