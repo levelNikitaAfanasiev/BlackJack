@@ -18,8 +18,8 @@ namespace blackjack
         
           byte[] array1 = System.Text.Encoding.Default.GetBytes($"wins {wins} ");
           byte[] array2 = System.Text.Encoding.Default.GetBytes($"Loses {loses} ");
-          file.WriteAsync(array1);
-          file.WriteAsync(array2);
+          file.Write(array1);
+          file.Write(array2);
       }
       public static void WinPlayer()
       {
